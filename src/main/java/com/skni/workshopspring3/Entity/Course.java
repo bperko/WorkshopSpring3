@@ -1,5 +1,6 @@
 package com.skni.workshopspring3.Entity;
 
+import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,7 +21,7 @@ public class Course {
     String courseName;
     int year;
     String universityName;
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     CourseTypeEnum courseType;
 
 }

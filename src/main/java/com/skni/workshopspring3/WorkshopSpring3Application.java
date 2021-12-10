@@ -8,6 +8,7 @@ import com.skni.workshopspring3.Entity.GenderEnum;
 import com.skni.workshopspring3.Entity.Student;
 import com.skni.workshopspring3.Service.CourseService;
 import com.skni.workshopspring3.Service.StudentService;
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,6 +19,11 @@ public class WorkshopSpring3Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(WorkshopSpring3Application.class, args);
+	}
+
+	@Bean
+	public ModelMapper modelMapper() {
+		return new ModelMapper();
 	}
 
 	@Bean
@@ -48,17 +54,17 @@ public class WorkshopSpring3Application {
 					course
 			);
 
-			System.out.println(studentMale1);
-			System.out.println(studentFemale);
+			//System.out.println(studentMale1);
+			//System.out.println(studentFemale);
 
-			System.out.println(studentService.findAllByLastName("Nowak"));
+			//System.out.println(studentService.findAllByLastName("Nowak"));
 
-			System.out.println(studentService.getStudentByGenderAndByCourseType(GenderEnum.MALE, CourseTypeEnum.INZYNIER));
-			System.out.println(studentService.getStudentByGenderAndByCourseType(GenderEnum.FEMALE, CourseTypeEnum.LICENCJAT));
+			//System.out.println(studentService.getStudentByGenderAndByCourseType(GenderEnum.MALE, CourseTypeEnum.INZYNIER));
+			//System.out.println(studentService.getStudentByGenderAndByCourseType(GenderEnum.FEMALE, CourseTypeEnum.LICENCJAT));
 
-			System.out.println(studentService.getAllStudents());
-			System.out.println(studentService.deleteStudentById(studentMale1.getId()));
-			System.out.println(studentService.findStudentWhereFirstNameStartsWithA());
+			//System.out.println(studentService.getAllStudents());
+			//System.out.println(studentService.deleteStudentById(studentMale1.getId()));
+			//System.out.println(studentService.findStudentWhereFirstNameStartsWithA());
 
 		};
 	}
